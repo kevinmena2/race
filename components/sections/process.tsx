@@ -9,7 +9,7 @@ const steps = [
     number: "01",
     icon: Phone,
     title: "Discovery Call",
-    description: "A free 30-minute conversation to understand your practice, your risks, and your goals — no obligation.",
+    description: "A free 30-minute conversation to understand your practice, your risks, and your goals. No obligation.",
   },
   {
     number: "02",

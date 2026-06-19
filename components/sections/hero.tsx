@@ -2,7 +2,7 @@
 
 import Image from "next/image"
 import { ArrowRight, ShieldCheck, MapPin, FileCheck2, UserRound, Zap, Clock, TrendingUp } from "lucide-react"
-import { motion } from "framer-motion"
+import { motion, useScroll, useTransform } from "framer-motion"
 import { Button } from "@/components/ui/button"
 
 const credibility = [
@@ -35,6 +35,9 @@ const fade = {
 }
 
 export function Hero() {
+  const { scrollY } = useScroll()
+  const imageY = useTransform(scrollY, [0, 700], ["0%", "14%"])
+
   return (
     <section
       id="top"
@@ -108,7 +111,7 @@ export function Hero() {
               className="mt-6 max-w-lg text-base md:text-lg leading-relaxed text-primary-foreground/65"
             >
               I help clinics, dental offices, and startups stay HIPAA-compliant,
-              secure, and running smoothly — with direct, personal service and none
+              secure, and running smoothly. Direct, personal service and none
               of the big-agency runaround.
             </motion.p>
 
@@ -198,15 +201,20 @@ export function Hero() {
               style={{ boxShadow: "0 0 0 1px hsl(174,95%,40%,0.22), 0 32px 72px -12px hsl(174,95%,40%,0.28)" }}
             />
 
-            {/* Image */}
+            {/* Image with parallax */}
             <div className="absolute inset-0 overflow-hidden rounded-2xl">
-              <Image
-                src="/images/hero-real.jpg"
-                alt="Medical staff at a reception desk in a modern clinic"
-                fill
-                priority
-                className="object-cover"
-              />
+              <motion.div
+                className="absolute inset-0"
+                style={{ scale: 1.12, y: imageY }}
+              >
+                <Image
+                  src="/images/hero-real.jpg"
+                  alt="Medical staff at a reception desk in a modern clinic"
+                  fill
+                  priority
+                  className="object-cover"
+                />
+              </motion.div>
               <div
                 className="absolute inset-0"
                 style={{

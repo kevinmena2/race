@@ -14,7 +14,7 @@ export function About() {
           <Reveal>
             <span className="pill-label">About</span>
             <h2 className="mt-5 font-heading text-3xl font-bold tracking-tight text-primary md:text-4xl text-balance">
-              A real person handling your IT —{" "}
+              A real person handling your IT,{" "}
               <span className="text-gradient-brand">not a faceless agency</span>
             </h2>
 
@@ -24,7 +24,7 @@ export function About() {
               Race Wonder LLC started in June 2026 with a simple idea: small medical practices and
               growing startups deserve serious IT and security help without hiring a big firm or a
               full-time team. When you work with me, you work with{" "}
-              <em className="font-medium text-foreground not-italic">me</em> — not a call center or
+              <em className="font-medium text-foreground not-italic">me</em>, not a call center or
               a rotating cast of technicians.
             </p>
             <p className="mt-4 text-base leading-relaxed text-muted-foreground text-pretty">

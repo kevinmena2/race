@@ -46,7 +46,7 @@ export function WhoIHelp() {
             <span className="text-gradient-brand">One specialist.</span>
           </h2>
           <p className="mt-4 text-base leading-relaxed text-muted-foreground">
-            Built around the businesses I know best — where security isn&apos;t optional.
+            Built around the businesses I know best, where security isn&apos;t optional.
           </p>
         </Reveal>
 

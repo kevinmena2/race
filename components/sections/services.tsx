@@ -9,7 +9,7 @@ const services = [
     icon: ShieldCheck,
     title: "HIPAA Compliance Assessments & Remediation",
     description:
-      "Know exactly where your practice stands. I find the gaps that put patient data — and your license — at risk, then fix them. No jargon, no scare tactics.",
+      "Know exactly where your practice stands. I find the gaps that put patient data and your license at risk, then fix them. No jargon, no scare tactics.",
     badge: "Most Popular",
   },
   {
@@ -69,7 +69,7 @@ export function Services() {
             <span className="text-gradient-brand">Nothing you don&apos;t.</span>
           </h2>
           <p className="mt-4 text-base leading-relaxed text-primary-foreground/55 text-pretty">
-            Security and IT made practical — built for small practices and growing startups in DFW.
+            Security and IT made practical, built for small practices and growing startups in DFW.
           </p>
         </Reveal>
 

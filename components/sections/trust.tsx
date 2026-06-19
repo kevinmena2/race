@@ -5,10 +5,10 @@ import { motion } from "framer-motion"
 import { Reveal } from "@/components/reveal"
 
 const trustPoints = [
-  { icon: UserRound,      label: "Direct, personal service", sub: "No teams or call centers — you talk to me" },
+  { icon: UserRound,      label: "Direct, personal service", sub: "No teams or call centers. You talk to me." },
   { icon: ShieldCheck,    label: "HIPAA-focused",            sub: "Built specifically for medical practices" },
   { icon: MapPin,         label: "DFW-local",                sub: "On-site visits whenever you need them" },
-  { icon: MessageSquare,  label: "Plain-language solutions",  sub: "No jargon, no scare tactics — just clarity" },
+  { icon: MessageSquare,  label: "Plain-language solutions",  sub: "No jargon, no scare tactics. Just clarity." },
 ]
 
 const testimonials = [
@@ -31,7 +31,7 @@ const testimonials = [
     color: "from-violet-500/30 to-violet-500/10",
     name: "Dr. Lisa P.",
     role: "Dental Office Manager, Dallas",
-    quote: "Switched from a big MSP to Race Wonder and immediately felt the difference — personal, fast, and no hidden fees.",
+    quote: "Switched from a big MSP to Race Wonder and immediately felt the difference: personal, fast, and no hidden fees.",
   },
 ]
 

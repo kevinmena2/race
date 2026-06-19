@@ -51,7 +51,7 @@ export function SiteHeader() {
           <span className="flex h-1.5 w-1.5 rounded-full bg-teal animate-pulse" aria-hidden="true" />
           <span className="text-white/80">
             <span className="font-semibold text-teal-light">New:</span>{" "}
-            HIPAA Compliance Fast-Track — get your practice assessed in 2 weeks.
+            HIPAA Compliance Fast-Track: get your practice assessed in 2 weeks.
           </span>
           <a
             href="#contact"

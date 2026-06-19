@@ -10,17 +10,17 @@ const faqs = [
   {
     question: "Do you work on-site or remotely?",
     answer:
-      "Both. I'm based in Dallas–Fort Worth, so I can come on-site when hands-on work or face-to-face conversations matter. Plenty of work — assessments, setup, and ongoing support — can also be handled securely and efficiently remotely.",
+      "Both. I'm based in Dallas–Fort Worth, so I can come on-site when hands-on work or face-to-face conversations matter. Plenty of work, including assessments, setup, and ongoing support, can also be handled securely and efficiently remotely.",
   },
   {
     question: "What size practices and companies do you work with?",
     answer:
-      "I specialize in small, independent medical and dental practices and growing startups — typically the businesses that need serious IT and security help but aren't ready for a full-time team or a big firm.",
+      "I specialize in small, independent medical and dental practices and growing startups, typically the businesses that need serious IT and security help but aren't ready for a full-time team or a big firm.",
   },
   {
     question: "How does the free consultation work?",
     answer:
-      "It's a no-pressure, 30-minute conversation about your practice, your current setup, and what's keeping you up at night. You'll walk away with a clearer picture of your risks and next steps — whether or not we end up working together.",
+      "It's a no-pressure, 30-minute conversation about your practice, your current setup, and what's keeping you up at night. You'll walk away with a clearer picture of your risks and next steps, whether or not we end up working together.",
   },
 ]
 
@@ -35,7 +35,7 @@ export function Faq() {
               Answers before you ask
             </h2>
             <p className="mt-4 text-base leading-relaxed text-muted-foreground">
-              Still have questions? Reach out — I respond quickly.
+              Still have questions? Reach out. I respond quickly.
             </p>
           </Reveal>
 

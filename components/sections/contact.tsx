@@ -59,25 +59,25 @@ export function Contact() {
             <span className="text-gradient-brand">your practice?</span>
           </h2>
           <p className="mt-5 text-base md:text-lg leading-relaxed text-muted-foreground text-pretty">
-            Book a free 30-minute discovery call. No pressure, no obligation — just a straight conversation about
+            Book a free 30-minute discovery call. No pressure, no obligation. Just a straight conversation about
             your risks and what you actually need.
           </p>
           {/* Urgency note */}
           <div className="mt-4 inline-flex items-center gap-2 rounded-full border border-amber-500/25 bg-amber-500/8 px-3.5 py-1.5 text-sm font-medium text-amber-600">
             <Clock className="h-3.5 w-3.5 shrink-0" aria-hidden="true" />
-            Currently accepting new clients — limited availability in Q3 2026
+            Currently accepting new clients. Limited availability in Q3 2026.
           </div>
         </div>
 
         {/* Description + urgency — desktop only (heading is on photo) */}
         <div className="hidden md:block mb-8 max-w-2xl">
           <p className="text-base md:text-lg leading-relaxed text-muted-foreground text-pretty">
-            Book a free 30-minute discovery call. No pressure, no obligation — just a straight conversation about
+            Book a free 30-minute discovery call. No pressure, no obligation. Just a straight conversation about
             your risks and what you actually need.
           </p>
           <div className="mt-4 inline-flex items-center gap-2 rounded-full border border-amber-500/25 bg-amber-500/8 px-3.5 py-1.5 text-sm font-medium text-amber-600">
             <Clock className="h-3.5 w-3.5 shrink-0" aria-hidden="true" />
-            Currently accepting new clients — limited availability in Q3 2026
+            Currently accepting new clients. Limited availability in Q3 2026.
           </div>
         </div>
 

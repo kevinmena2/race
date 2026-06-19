@@ -25,7 +25,7 @@ export function Platforms() {
           ))}
         </div>
         <p className="mt-6 text-center text-[11px] text-muted-foreground/40">
-          Tools I work with — not clients or endorsers
+          Tools I work with, not clients or endorsers
         </p>
       </div>
     </section>

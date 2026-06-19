@@ -5,6 +5,7 @@ import { Stats } from "@/components/sections/stats"
 import { About } from "@/components/sections/about"
 import { Services } from "@/components/sections/services"
 import { WhoIHelp } from "@/components/sections/who-i-help"
+import { Gallery } from "@/components/sections/gallery"
 import { Process } from "@/components/sections/process"
 import { Trust } from "@/components/sections/trust"
 import { Faq } from "@/components/sections/faq"
@@ -22,6 +23,7 @@ export default function Home() {
         <About />
         <Services />
         <WhoIHelp />
+        <Gallery />
         <Process />
         <Trust />
         <Faq />
