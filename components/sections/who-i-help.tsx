@@ -2,24 +2,34 @@
 
 import Image from "next/image"
 import { motion } from "framer-motion"
-import { ArrowRight } from "lucide-react"
+import { ArrowRight, Check } from "lucide-react"
 import { Reveal } from "@/components/reveal"
 
 const audiences = [
   {
     title: "Independent Medical & Dental Practices",
     description:
-      "You handle patient care; I handle the technology and compliance behind it. From HIPAA assessments to secure backups, I help you protect patient data and avoid costly mistakes without slowing your team down.",
-    image: "/images/medical-dental-clinic.png",
-    alt: "Modern independent dental and medical practice treatment room interior",
+      "You handle patient care; I handle the technology and compliance behind it.",
+    bullets: [
+      "HIPAA assessments & gap remediation",
+      "Secure patient data backups & encryption",
+      "BAA-ready from day one",
+    ],
+    image: "/images/dental-real.jpg",
+    alt: "Modern dental office with professional chair and equipment",
     cta: { label: "Learn about HIPAA compliance", href: "#services" },
   },
   {
     title: "Fast-Growing DFW Startups",
     description:
-      "Scaling fast? I help you build secure, scalable IT from the start — identity, devices, cloud, and onboarding that grow with you, so security keeps pace with your business instead of holding it back.",
-    image: "/images/startup-workspace.png",
-    alt: "Modern startup office workspace with open plan desks and laptops",
+      "Scaling fast? I help you build secure, scalable IT from the very start.",
+    bullets: [
+      "Identity, SSO & access management",
+      "Device management & onboarding (MDM)",
+      "Fractional vCIO & strategic IT planning",
+    ],
+    image: "/images/startup-real.jpg",
+    alt: "Diverse startup team collaborating around a table with laptops",
     cta: { label: "See startup services", href: "#services" },
   },
 ]
@@ -32,8 +42,12 @@ export function WhoIHelp() {
         <Reveal className="max-w-2xl">
           <span className="pill-label">Who I Help</span>
           <h2 className="mt-5 font-heading text-3xl font-bold tracking-tight text-primary md:text-4xl text-balance">
-            Built for the businesses I know best
+            Two audiences.{" "}
+            <span className="text-gradient-brand">One specialist.</span>
           </h2>
+          <p className="mt-4 text-base leading-relaxed text-muted-foreground">
+            Built around the businesses I know best — where security isn&apos;t optional.
+          </p>
         </Reveal>
 
         <div className="mt-14 grid gap-7 md:grid-cols-2">
@@ -43,7 +57,7 @@ export function WhoIHelp() {
               initial={{ opacity: 0, y: 22 }}
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true, margin: "-50px" }}
-              transition={{ duration: 0.5, delay: i * 0.1, ease: [0.21, 0.47, 0.32, 0.98] }}
+              transition={{ duration: 0.5, delay: i * 0.12, ease: [0.21, 0.47, 0.32, 0.98] }}
               className="group overflow-hidden rounded-2xl border border-border bg-card card-glow"
             >
               {/* Image */}
@@ -57,20 +71,31 @@ export function WhoIHelp() {
                 <div
                   className="absolute inset-0"
                   style={{
-                    background: "linear-gradient(to top, hsl(220,55%,13%,0.5) 0%, transparent 60%)",
+                    background: "linear-gradient(to top, hsl(220,55%,13%,0.72) 0%, transparent 55%)",
                   }}
                   aria-hidden="true"
                 />
+                {/* Title overlay on image */}
+                <h3 className="absolute bottom-4 left-5 right-5 font-heading text-xl font-bold text-white text-balance leading-snug drop-shadow-md">
+                  {item.title}
+                </h3>
               </div>
 
               {/* Content */}
               <div className="p-6 md:p-7">
-                <h3 className="font-heading text-xl font-semibold text-primary text-balance">
-                  {item.title}
-                </h3>
-                <p className="mt-3 text-sm leading-relaxed text-muted-foreground text-pretty">
+                <p className="text-sm leading-relaxed text-muted-foreground text-pretty">
                   {item.description}
                 </p>
+                <ul className="mt-4 space-y-2">
+                  {item.bullets.map((b) => (
+                    <li key={b} className="flex items-start gap-2.5 text-sm text-muted-foreground">
+                      <span className="mt-0.5 flex h-4 w-4 shrink-0 items-center justify-center rounded-full bg-teal/12">
+                        <Check className="h-2.5 w-2.5 text-teal" />
+                      </span>
+                      {b}
+                    </li>
+                  ))}
+                </ul>
                 <a
                   href={item.cta.href}
                   className="mt-5 inline-flex items-center gap-1.5 text-sm font-semibold text-teal transition-colors hover:text-teal-light"

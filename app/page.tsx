@@ -1,6 +1,7 @@
 import { SiteHeader } from "@/components/site-header"
 import { Hero } from "@/components/sections/hero"
 import { Platforms } from "@/components/sections/platforms"
+import { Stats } from "@/components/sections/stats"
 import { About } from "@/components/sections/about"
 import { Services } from "@/components/sections/services"
 import { WhoIHelp } from "@/components/sections/who-i-help"
@@ -17,6 +18,7 @@ export default function Home() {
       <main>
         <Hero />
         <Platforms />
+        <Stats />
         <About />
         <Services />
         <WhoIHelp />
