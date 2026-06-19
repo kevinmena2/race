@@ -1,0 +1,174 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* ─── Utility layer ─────────────────────────────────────────── */
+@layer utilities {
+  .text-balance  { text-wrap: balance; }
+  .text-pretty   { text-wrap: pretty; }
+
+  /* Vibrant gradient text */
+  .text-gradient-brand {
+    background-image: linear-gradient(115deg, hsl(var(--teal-light)) 0%, hsl(var(--teal)) 50%, hsl(var(--teal-light)) 100%);
+    -webkit-background-clip: text;
+    background-clip: text;
+    color: transparent;
+  }
+
+  /* Subtle grid texture for dark sections */
+  .bg-grid {
+    background-image:
+      linear-gradient(hsl(var(--teal) / 0.06) 1px, transparent 1px),
+      linear-gradient(90deg, hsl(var(--teal) / 0.06) 1px, transparent 1px);
+    background-size: 48px 48px;
+  }
+
+  /* Dot grid for subtle texture */
+  .bg-dot-grid {
+    background-image: radial-gradient(hsl(var(--teal) / 0.12) 1px, transparent 1px);
+    background-size: 28px 28px;
+  }
+
+  /* Modern pill / badge label for sections */
+  .pill-label {
+    @apply inline-flex items-center gap-1.5 rounded-full border border-teal/25 bg-teal/10 px-3.5 py-1 text-[11px] font-bold uppercase tracking-[0.15em] text-teal;
+  }
+
+  /* Glassmorphism surface */
+  .glass {
+    background: hsl(var(--navy) / 0.6);
+    backdrop-filter: saturate(180%) blur(16px);
+    -webkit-backdrop-filter: saturate(180%) blur(16px);
+    border: 1px solid hsl(255 255% 100% / 0.08);
+  }
+
+  /* Card hover glow ring */
+  .card-glow {
+    @apply transition-all duration-300;
+    box-shadow:
+      0 1px 3px hsl(var(--navy) / 0.07),
+      0 8px 28px -8px hsl(var(--navy) / 0.16);
+  }
+  .card-glow:hover {
+    box-shadow:
+      0 2px 6px hsl(var(--navy) / 0.1),
+      0 24px 48px -16px hsl(var(--navy) / 0.24),
+      0 0 0 1px hsl(var(--teal) / 0.25);
+  }
+
+  /* Legacy aliases kept for existing components */
+  .shadow-card       { box-shadow: 0 1px 3px hsl(var(--navy)/0.07), 0 8px 28px -8px hsl(var(--navy)/0.16); }
+  .shadow-card-hover { box-shadow: 0 2px 6px hsl(var(--navy)/0.1), 0 24px 48px -16px hsl(var(--navy)/0.24); }
+  .shadow-glow-teal  { box-shadow: 0 8px 32px -6px hsl(var(--teal)/0.55); }
+
+  /* Dark gradient backgrounds */
+  .bg-hero           { background: linear-gradient(160deg, hsl(var(--navy-deep)) 0%, hsl(var(--navy)) 100%); }
+  .bg-gradient-navy  { background: linear-gradient(160deg, hsl(var(--navy)) 0%, hsl(var(--navy-deep)) 100%); }
+
+  /* Float animation */
+  .animate-float { animation: float 6s ease-in-out infinite; }
+}
+
+@keyframes float {
+  0%, 100% { transform: translateY(0); }
+  50%       { transform: translateY(-8px); }
+}
+
+@keyframes pulse-slow {
+  0%, 100% { opacity: 1; }
+  50%       { opacity: 0.5; }
+}
+
+/* ─── Base layer ────────────────────────────────────────────── */
+@layer base {
+  :root {
+    /* Fonts */
+    --font-sans:    var(--font-inter);
+    --font-heading: var(--font-geist-sans, var(--font-inter));
+
+    /* ── Core palette ── */
+    --background:         0 0% 100%;
+    --foreground:         220 38% 16%;   /* #1A2B42 */
+
+    --card:               0 0% 100%;
+    --card-foreground:    220 38% 16%;
+
+    --popover:            0 0% 100%;
+    --popover-foreground: 220 38% 16%;
+
+    /* Deep navy #0D1B35 */
+    --primary:            220 55% 13%;
+    --primary-foreground: 0 0% 100%;
+
+    /* Visibly cool blue-tinted off-white */
+    --secondary:          218 38% 96%;
+    --secondary-foreground: 220 55% 13%;
+
+    --muted:              218 30% 94%;
+    --muted-foreground:   218 18% 52%;   /* #748096 */
+
+    --accent:             218 35% 94%;
+    --accent-foreground:  220 55% 13%;
+
+    --destructive:        0 84% 60%;
+    --destructive-foreground: 0 0% 100%;
+
+    --border:             214 25% 88%;   /* #CDD8E7 */
+    --input:              214 25% 88%;
+    --ring:               174 90% 38%;
+
+    /* ── Brand teal ── */
+    --teal:               174 90% 38%;   /* #0BC9A8 */
+    --teal-light:         172 75% 53%;   /* #23DECC */
+    --teal-foreground:    0 0% 100%;
+
+    /* ── Navy scale ── */
+    --navy:               220 55% 13%;   /* #0D1B35 */
+    --navy-deep:          224 62% 8%;    /* #070E1C */
+
+    --radius: 0.75rem;
+
+    /* Charts */
+    --chart-1: 174 90% 38%;
+    --chart-2: 220 55% 13%;
+    --chart-3: 218 18% 52%;
+    --chart-4: 172 75% 53%;
+    --chart-5: 224 62% 8%;
+  }
+}
+
+@layer base {
+  * { @apply border-border; }
+
+  html {
+    scroll-behavior: smooth;
+    scroll-padding-top: 5rem;
+  }
+
+  body {
+    @apply bg-background text-foreground;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+  }
+
+  h1, h2, h3, h4 {
+    font-family: var(--font-heading, var(--font-sans));
+    letter-spacing: -0.022em;
+    text-wrap: balance;
+  }
+
+  p { text-wrap: pretty; }
+
+  ::selection {
+    background: hsl(var(--teal) / 0.2);
+    color: hsl(var(--navy-deep));
+  }
+
+  :focus-visible {
+    outline: 2px solid hsl(var(--teal));
+    outline-offset: 2px;
+  }
+}
+
+/* Hide the "Built with v0" badge */
+[id^="v0-built-with-button-"] { display: none !important; }

@@ -1,0 +1,174 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer utilities {
+  .text-balance {
+    text-wrap: balance;
+  }
+
+  .text-pretty {
+    text-wrap: pretty;
+  }
+
+  /* Vibrant teal gradient for the hero key phrase (reads best on a dark/navy hero) */
+  .text-gradient-brand {
+    background-image: linear-gradient(120deg, hsl(var(--teal-light)), hsl(var(--teal)) 60%, hsl(var(--teal-light)));
+    -webkit-background-clip: text;
+    background-clip: text;
+    color: transparent;
+  }
+
+  /* Faint dot-grid — set a text color to control dot color, e.g. className="text-white/[0.06]" */
+  .bg-dot-grid {
+    background-image: radial-gradient(currentColor 1px, transparent 1px);
+    background-size: 22px 22px;
+  }
+
+  /* Rich hero bg for DARK sections: navy gradient + soft teal glow up top */
+  .bg-hero {
+    background-color: hsl(var(--navy));
+    background-image:
+      radial-gradient(55% 45% at 50% 0%, hsl(var(--teal) / 0.18), transparent 70%),
+      linear-gradient(180deg, hsl(var(--navy)) 0%, hsl(var(--navy-deep)) 100%);
+  }
+
+  /* Subtle hero bg for LIGHT sections: faint teal glow on off-white */
+  .bg-hero-light {
+    background-color: hsl(var(--background));
+    background-image: radial-gradient(45% 40% at 85% 0%, hsl(var(--teal) / 0.08), transparent 70%);
+  }
+
+  /* Navy gradient for dark blocks / footer */
+  .bg-gradient-navy {
+    background-image: linear-gradient(160deg, hsl(var(--navy)) 0%, hsl(var(--navy-deep)) 100%);
+  }
+
+  /* Frosted sticky header — pair with border-b; toggle on scroll */
+  .header-blur {
+    background-color: hsl(var(--navy) / 0.72);
+    backdrop-filter: saturate(160%) blur(12px);
+    -webkit-backdrop-filter: saturate(160%) blur(12px);
+  }
+
+  /* Soft layered shadow tinted navy */
+  .shadow-card {
+    box-shadow:
+      0 1px 2px hsl(var(--navy) / 0.04),
+      0 8px 24px -12px hsl(var(--navy) / 0.12);
+  }
+
+  .shadow-card-hover {
+    box-shadow:
+      0 2px 4px hsl(var(--navy) / 0.06),
+      0 18px 40px -16px hsl(var(--navy) / 0.2);
+  }
+
+  /* Teal glow for primary CTA hover */
+  .shadow-glow-teal {
+    box-shadow: 0 8px 30px -6px hsl(var(--teal) / 0.5);
+  }
+
+  /* Gentle float for the hero image / accents */
+  .animate-float {
+    animation: float 6s ease-in-out infinite;
+  }
+}
+
+@keyframes float {
+
+  0%,
+  100% {
+    transform: translateY(0);
+  }
+
+  50% {
+    transform: translateY(-8px);
+  }
+}
+
+@layer base {
+  :root {
+    --font-sans: var(--font-inter);
+    --font-heading: var(--font-inter);
+    /* point this at Geist/Fraunces once loaded (see note) */
+
+    --background: 0 0% 100%;
+    --foreground: 215 25% 27%;
+    --card: 0 0% 100%;
+    --card-foreground: 215 25% 27%;
+    --popover: 0 0% 100%;
+    --popover-foreground: 215 25% 27%;
+    --primary: 211 66% 17%;
+    --primary-foreground: 210 40% 98%;
+    --secondary: 210 40% 98%;
+    --secondary-foreground: 211 66% 17%;
+    --muted: 210 40% 98%;
+    --muted-foreground: 215 16% 47%;
+    --accent: 210 40% 98%;
+    --accent-foreground: 211 66% 17%;
+    --destructive: 0 84.2% 60.2%;
+    --destructive-foreground: 210 40% 98%;
+    --border: 214 32% 91%;
+    --input: 214 32% 91%;
+    --ring: 173 80% 40%;
+    --teal: 173 80% 40%;
+    --teal-light: 172 66% 50%;
+    --teal-foreground: 0 0% 100%;
+    --navy: 211 66% 17%;
+    --navy-deep: 213 70% 13%;
+    --radius: 1rem;
+    --chart-1: 173 80% 40%;
+    --chart-2: 211 66% 17%;
+    --chart-3: 215 16% 47%;
+    --chart-4: 172 66% 50%;
+    --chart-5: 213 70% 13%;
+  }
+}
+
+@layer base {
+  * {
+    @apply border-border;
+  }
+
+  html {
+    scroll-behavior: smooth;
+    scroll-padding-top: 5rem;
+    /* anchor jumps clear the sticky header */
+  }
+
+  body {
+    @apply bg-background text-foreground;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+  }
+
+  /* Crisper, more intentional headings site-wide */
+  h1,
+  h2,
+  h3,
+  h4 {
+    font-family: var(--font-heading, var(--font-sans));
+    letter-spacing: -0.02em;
+    text-wrap: balance;
+  }
+
+  p {
+    text-wrap: pretty;
+  }
+
+  ::selection {
+    background: hsl(var(--teal) / 0.22);
+    color: hsl(var(--navy-deep));
+  }
+
+  :focus-visible {
+    outline: 2px solid hsl(var(--teal));
+    outline-offset: 2px;
+  }
+}
+
+/* Hide the "Built with v0" badge */
+[id^="v0-built-with-button-"] {
+  display: none !important;
+}
